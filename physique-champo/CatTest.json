@@ -1,0 +1,40 @@
+[
+    {
+        "id": 0,
+        "name": "Programmes de colle",
+        "icon": "calendar",
+        "size": 30
+    },
+    {
+        "id": 1,
+        "name": "Cours",
+        "icon": "book",
+        "size": 26
+    },
+    {
+        "id": 2,
+        "name": "Travaux Dirigés",
+        "icon": "square.and.pencil",
+        "size": 24
+    },
+    {
+        "id": 3,
+        "name": "Travaux Pratiques",
+        "icon": "flask",
+        "size": 100
+    },
+    {
+        "id": 4,
+        "name": "Devoirs Surveillés",
+        "icon": "tray",
+        "size": 80
+    },
+    {
+        "id": 5,
+        "name": "Devoirs Maison",
+        "icon": "house",
+        "size": 17
+    }
+      
+]
+

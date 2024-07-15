@@ -9,27 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
+        NavigationSplitView {
             ZStack {
-                Image("Tso_Moriri")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(maxWidth: .infinity, maxHeight: 375)
-                    .clipped()
-                Text("MP2I CHAMPO")
-                    .font(.largeTitle.bold())
-                    .fontWeight(.light)
-                    .kerning(4)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
-                    .background(.black)
-                    .cornerRadius(10)
-            }
-            
-            
+                Color(red: 0.877, green: 0.887, blue: 0.904)
+                    .edgesIgnoringSafeArea(.horizontal)
+                ScrollView {
+                    MainHeader()
+                        .edgesIgnoringSafeArea(.horizontal)
+                    VStack (alignment: .leading) {
+                        Text("Catégories")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.horizontal)
+                            .padding(.bottom, -5)
+                        CatList()
+                            .padding(.horizontal)
+                    }
+                    .padding(.top)
+                    
+                }
+                .edgesIgnoringSafeArea(.top)
+            }.edgesIgnoringSafeArea(.bottom)
+                .navigationBarHidden(true)
+                .navigationTitle("Accueil")
+        } detail: {
+            Text("Choisissez une catégorie")
         }
-        .edgesIgnoringSafeArea(.top)
     }
         
 }

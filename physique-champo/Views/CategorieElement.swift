@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct CategorieElement: View {
+    var cat : Categorie
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: cat.icon)
+            Text(cat.name)
+            Spacer()
+            Text("\(cat.size)")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .foregroundColor(.primary)
     }
 }
 
 #Preview {
-    CategorieElement()
+    CategorieElement(cat: categories[0])
 }

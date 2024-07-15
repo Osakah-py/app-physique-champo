@@ -9,7 +9,22 @@ import SwiftUI
 
 struct CatList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        LazyVStack (alignment: .leading) {
+                ForEach (categories) { cat in
+                    if cat.id != 0 {
+                        Divider()
+                    }
+                    NavigationLink {
+                        CatDetails()
+                    } label: {
+                        CategorieElement(cat: cat)
+                    }.id(cat.id)
+                }
+            }
+            .padding()
+            .background(.white)
+            .cornerRadius(10)
     }
 }
 
