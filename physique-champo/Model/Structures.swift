@@ -13,3 +13,14 @@ struct Categorie : Hashable, Codable, Identifiable {
     var icon : String
     var size : Int
 }
+
+struct Document : Hashable, Codable, Identifiable {
+    var id : Int
+    var title : String
+    var fichiers : String
+    var categorie : Int
+    
+    var fichiersArray : [String] {
+        fichiers.components(separatedBy: "\n")
+    }
+}

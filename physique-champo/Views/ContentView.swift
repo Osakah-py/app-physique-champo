@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             ZStack {
                 Color(red: 0.877, green: 0.887, blue: 0.904)
                     .edgesIgnoringSafeArea(.horizontal)
@@ -17,13 +17,16 @@ struct ContentView: View {
                     MainHeader()
                         .edgesIgnoringSafeArea(.horizontal)
                     VStack (alignment: .leading) {
-                        Text("Catégories")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .padding(.horizontal)
-                            .padding(.bottom, -5)
-                        CatList()
-                            .padding(.horizontal)
+                            Text("Catégories")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding(.horizontal)
+                                .padding(.bottom, -5)
+
+                        GeometryReader { gr in
+                            CatList()
+                                .padding(.horizontal, gr.size.width > 600 ? 50 : 16)
+                        }
                     }
                     .padding(.top)
                     
@@ -32,8 +35,6 @@ struct ContentView: View {
             }.edgesIgnoringSafeArea(.bottom)
                 .navigationBarHidden(true)
                 .navigationTitle("Accueil")
-        } detail: {
-            Text("Choisissez une catégorie")
         }
     }
         

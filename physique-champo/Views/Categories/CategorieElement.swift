@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CategorieElement: View {
+    
     var cat : Categorie
+    
     var body: some View {
         HStack {
             Image(systemName: cat.icon)
