@@ -10,9 +10,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color(red: 0.877, green: 0.887, blue: 0.904)
-                    .edgesIgnoringSafeArea(.horizontal)
                 ScrollView {
                     MainHeader()
                         .edgesIgnoringSafeArea(.horizontal)
@@ -31,8 +28,9 @@ struct ContentView: View {
                     .padding(.top)
                     
                 }
+                .background(Color(.systemGray6))
                 .edgesIgnoringSafeArea(.top)
-            }.edgesIgnoringSafeArea(.bottom)
+                .edgesIgnoringSafeArea(.bottom)
                 .navigationBarHidden(true)
                 .navigationTitle("Accueil")
         }

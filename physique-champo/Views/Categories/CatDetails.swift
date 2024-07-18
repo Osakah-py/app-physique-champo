@@ -2,10 +2,6 @@ import SwiftUI
 
 struct CatDetails: View {
     var body: some View {
-        ZStack {
-            Color(red: 0.877, green: 0.887, blue: 0.904)
-                .edgesIgnoringSafeArea(.horizontal)
-                .edgesIgnoringSafeArea(.vertical)
         ScrollView {
                 ForEach (documents) {doc in
                     if doc.id != documents[0].id {
@@ -18,7 +14,7 @@ struct CatDetails: View {
                 .cornerRadius(10)
                 .padding()
             }
-        }
+        .background(Color(.systemGray6))
         .navigationBarTitle("Cours")
     }
         

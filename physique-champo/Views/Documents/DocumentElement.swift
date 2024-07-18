@@ -15,46 +15,46 @@ struct DocumentElement: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("1")
-                    .foregroundStyle(.secondary)
-                Text(doc.title)
-                Spacer()
-                Button {
-                    withAnimation {
-                        showDetails.toggle()
-                    }
-                } label: {
+            Button (action:  {
+                withAnimation {
+                    showDetails.toggle()
+                }
+            })  {
+                     HStack {
+                         Text("1")
+                             .foregroundStyle(.secondary)
+                         Text(doc.title)
+                         Spacer()
                     Label("Voir les fichiers", systemImage: "chevron.right.circle")
                         .labelStyle(.iconOnly)
                         .imageScale(.large)
                         .rotationEffect(.degrees(showDetails ? -90 : 90))
                 }
             }
-                if showDetails {
-                    Divider()
-                    
-                    HStack {
-                        Spacer()
-                        ForEach (doc.fichiersArray, id: \.self) { f in
-                            NavigationLink {
-                                PdfReader(name: f)
-                            } label: {
-                                VStack {
-                                    Image("pdf_icon")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                    Text(f)
-                                        .foregroundColor(.primary)
-                                }
-                            }
+            .buttonStyle(PlainButtonStyle())
+            if showDetails {
+                        Divider()
+                        
+                        HStack {
                             Spacer()
+                            ForEach (doc.fichiersArray, id: \.self) { f in
+                                NavigationLink {
+                                    PdfReader(name: f)
+                                } label: {
+                                    VStack {
+                                        Image("pdf_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                        Text(f)
+                                            .foregroundColor(.primary)
+                                    }
+                                }
+                                Spacer()
+                            }
                         }
+                        .transition(.slide)
                     }
-                    .transition(.slide)
                 }
-            
-        }
     }
 }
 
