@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-                ScrollView {
+            ScrollView {
                     MainHeader()
                         .edgesIgnoringSafeArea(.horizontal)
                     VStack (alignment: .leading) {
@@ -18,11 +18,11 @@ struct ContentView: View {
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
-                                .padding(.bottom, -5)
 
                         GeometryReader { gr in
-                            CatList()
-                                .padding(.horizontal, gr.size.width > 600 ? 50 : 16)
+                            //CatList()
+                             //   .padding(.horizontal, gr.size.width > 600 ? 50 : 16)
+                            CatSquareList()
                         }
                     }
                     .padding(.top)

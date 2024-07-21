@@ -15,7 +15,7 @@ struct MainHeader: View {
                 Image("Tso_Moriri")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(maxWidth: .infinity, maxHeight: 400)
+                    .frame(maxWidth: .infinity, maxHeight: 500)
                     .clipped()
                         
                 Text("MP2I CHAMPO")
